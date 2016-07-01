@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<h1>{{welcome.post_title}}</h1>
+	<p>{{welcome.get_content}}</p>
+	{% for post in posts %}
+		<h1><a href="{{post.permalink}}">{{post.title}}</a></h1>
+		<h2> Author: {{post.book_author}}
+			
+		<h3> Would I recomend this:  </h3>
+			{% if post.recomend == false %}
+				<h3>No</h3>
+			{% else %}
+				<h3>Yes</h3>
+			{% endif %}
+		<h4> How did I like it? {{post.rating}} </h4>
+		<h4> My Review: {{post.get_content}}</h4>
+		
+		
+		
+	{% endfor %}
+{% endblock%}
+
+
+{# THIS IS THE PAGE THAT IS THE HTML FOR THE MAIN PAGE THE FIRST PLACE WHERE THE SITE GOES#}
